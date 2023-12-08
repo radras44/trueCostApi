@@ -1,0 +1,14 @@
+{
+    "lastFetch": {
+        "second": 20,
+        "minute": 30,
+        "hour": 20
+    },
+    "data": {
+        "base": "USD",
+        "results": {
+            "CLP": 876.5,
+            "ARS": 366.9544
+        }
+    }
+}
