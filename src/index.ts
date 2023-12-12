@@ -1,11 +1,13 @@
 // import { ApolloServer, gql } from "apollo-server"
 // import jwt from "jsonwebtoken"
-// import dotenv from "dotenv"
-// dotenv.config()
+import dotenv from "dotenv"
+import ErClient from "./erClient"
+import Extractor from "./extractor"
+dotenv.config()
 
 // const graphDef = gql`
 //     query {
-
+//         get
 //     }
 // `;
 
@@ -26,8 +28,11 @@
 //     console.log("listening in port:", listenData.port, "\n", listenData.url)
 // })
 
-import ErClient from "./getErData";
-new ErClient()
+const erClient = new ErClient()
+erClient.run()
+const extractor = new Extractor()
+extractor.run()
+
 
 
 
