@@ -6,10 +6,34 @@ export default class Extractor extends DataManager {
     page: Page
     constructor() {
         super()
+        this.wageData = this.loadWageData()
     }
 
-    async run() {
-        await this.minimumWageExtractor()
+    async crono () {
+        const intervalSize = 1000 * 60 * 60
+        const minTimeBetweenUpdate = 1000 * 60 * 60 * 24 * 7
+        setInterval(async()=>{
+            console.log("comprobacion Extractor-crono...")
+            if(this.wageData.updateDate){
+                const updateDate = new Date(this.wageData.updateDate)
+                const currentDate = new Date()
+                const difference = currentDate.getTime() - updateDate.getTime()
+                if(difference > minTimeBetweenUpdate){
+                    console.log("tiempo entre actualizacion mayor a 24 horas, realizando accion...")
+                    this.main()
+                }else{
+                    let timeLeft = (minTimeBetweenUpdate - difference) 
+                    let hours = Math.floor(timeLeft / (1000 * 60 * 60))
+                    let minutes = Math.floor((timeLeft % (1000 * 60 * 60))/(1000 * 60))
+                    let seconds = Math.floor((timeLeft % (1000 * 60))/ 1000)
+                    console.log(`quedan ${hours} con ${minutes} y ${seconds} hasta la siguiente actualizacion`)
+                }
+            }
+        },intervalSize)
+    }
+
+    async main() {
+        await this.extractWageData()
     }
 
     async initPuppeteer() {
@@ -21,7 +45,7 @@ export default class Extractor extends DataManager {
         await this.browser.close()
     }
 
-    async minimumWageExtractor() {
+    async extractWageData() {
         await this.initPuppeteer()
         const minimumWage_url = `https://en.wikipedia.org/wiki/List_of_countries_by_minimum_wage`
         console.log("navegando")
@@ -92,7 +116,7 @@ export default class Extractor extends DataManager {
                 updateDate : currentDate,
                 data : data.result
             }
-            await super.updateWageDataset(wageData)
+            await super.updateWageData(wageData)
         }
         await this.closePuppeteer()
     }

@@ -2,32 +2,36 @@ import { ErData, WageData } from "./utils/interfaces"
 import fs from "fs"
 import path from "path"
 export class DataManager {
-    wageDataset: WageData | null
+    wageData: WageData | null
     erData: ErData | null
     erDataPath: string
-    wageDatasetPath: string
+    wageDataPath: string
 
     constructor() {
         this.erDataPath = path.join(__dirname, "..", "data", "erClientData.json")
-        this.wageDatasetPath = path.join(__dirname, "..", "data", "wageData.json")
-        this.wageDataset = null
+        this.wageDataPath = path.join(__dirname, "..", "data", "wageData.json")
+        this.wageData = null
         this.erData = null
     }
 
-    loadWageDataset(): WageData | null {
+    loadWageData(): WageData | null {
         try {
-            const jsonData: WageData | null = require(this.wageDatasetPath) || null
-            this.wageDataset = jsonData
-            console.log("Data loaded, loaded Data\n", jsonData)
+            const jsonData: WageData | null = require(this.wageDataPath) || null
+            this.wageData = jsonData
+            console.log("Data loaded, wage-data:")
+            console.dir(jsonData,{depth : 0})
             return jsonData
         } catch (error) {
             return null
         }
     }
 
-    updateWageDataset(data: WageData) {
+    updateWageData(data: WageData) {
         try {
-            fs.writeFileSync(this.wageDatasetPath, JSON.stringify(data, null, 4))
+            fs.writeFileSync(this.wageDataPath, JSON.stringify(data, null, 4))
+            console.log("data updated, new data:")
+            console.dir(data,{depth : 0})
+            return data
         } catch (error) {
             console.log(error)
         }
@@ -35,10 +39,10 @@ export class DataManager {
 
     loadErData(): ErData | null {
         try {
-            const filePath = path.join()
-            const jsonData: ErData | null = require(filePath) || null
+            const jsonData: ErData | null = require(this.erDataPath) || null
             this.erData = jsonData
-            console.log("Data loaded, loaded Data\n", jsonData)
+            console.log("Data loaded, er-data:")
+            console.dir(jsonData,{depth : 0})
             return jsonData
         } catch (error) {
             return null
@@ -48,7 +52,8 @@ export class DataManager {
     updaeErData(data: ErData): ErData | null {
         try {
             fs.writeFileSync(this.erDataPath, JSON.stringify(data, null, 4))
-            console.log("data updated, new data:\n", data)
+            console.log("data updated, new data:")
+            console.dir(data,{depth : 0})
             return data
         } catch (error) {
             console.log(error)
