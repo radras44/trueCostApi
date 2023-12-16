@@ -1,5 +1,6 @@
-import { ErData } from "./utils/interfaces"
-import { DataManager } from "./dataManager"
+import { ErData } from "../interfaces"
+import DataManager from "./dataManager"
+import { createScheduledTask } from "../crono"
 export default class ErClient extends DataManager {
     erData: ErData | null
     constructor() {
@@ -8,26 +9,12 @@ export default class ErClient extends DataManager {
     }
 
     async crono () {
-        const intervalSize = 1000 * 60 * 60
-        const minTimeBetweenUpdate = 1000 * 60 * 60 * 24
-        setInterval(async()=>{
-            console.log("comprobacion ErClient-crono...")
-            if(this.erData.updateDate){
-                const updateDate = new Date(this.erData.updateDate)
-                const currentDate = new Date()
-                const difference = currentDate.getTime() - updateDate.getTime()
-                if(difference > minTimeBetweenUpdate){
-                    console.log("tiempo entre actualizacion mayor a 24 hora, realizando accion...")
-                    this.main()
-                }else{
-                    let timeLeft = (minTimeBetweenUpdate - difference) 
-                    let hours = Math.floor(timeLeft / (1000 * 60 * 60))
-                    let minutes = Math.floor((timeLeft % (1000 * 60 * 60))/(1000 * 60))
-                    let seconds = Math.floor((timeLeft % (1000 * 60))/ 1000)
-                    console.log(`quedan ${hours} con ${minutes} y ${seconds} hasta la siguiente actualizacion`)
-                }
-            }
-        },intervalSize)
+        createScheduledTask({
+            lastUpdateDate : new Date(this.erData.updateDate),
+            minTimeBetweenUpdate : 1000 * 60 * 60 * 24,
+            comprobationTime : 1000 * 60 * 60,
+            action : this.main
+        })
     }
 
     async main() {

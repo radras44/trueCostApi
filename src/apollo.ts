@@ -1,43 +1,23 @@
-import { ApolloServer, gql } from "apollo-server"
-import jwt from "jsonwebtoken"
-import dotenv from "dotenv"
-import ErClient from "./erClient"
-import Extractor from "./extractor"
-dotenv.config()
+import { ApolloServer } from "apollo-server-express"
 
-const graphDef = gql`
-    input GetRelativeCostArgs{
-        currentcy : String!
-    }
-    type GetRelativeCostRes{
-        status : Boolean!
-        message : String
-        result : Int!
-    }
-    type Query {
-        getRelativeCost(data : GetRelativeCostArgs) : GetRelativeCostRes
-    }
-`;
+import resolvers from "./graphql/resolvers";
+import schema from "./graphql/schema";
 
-const graphRes = {
-    Query: {
-        getRelativeCost : (_,args) => {
-            console.log("args:",args)
-            return {
-                status : true,
-                message : "mensaje de prueba",
-                result : 0
-            }
-        }
+function verifyAuth (auth : string | null) {
+    if(!auth){
+        return false
     }
+
+    if(auth == process.env.API_KEY){
+        return true        
+    }
+
+    return false
 }
 
 const server = new ApolloServer({
-    typeDefs: graphDef,
-    resolvers: graphRes,
-    context: async ({ req }) => {
-
-    }
+    typeDefs: schema,
+    resolvers: resolvers,
 })
 
 export default server

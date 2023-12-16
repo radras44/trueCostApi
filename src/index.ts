@@ -1,13 +1,20 @@
+import dotenv from "dotenv"
+dotenv.config()
+import app from "./app"
+import initCronoTasks from "./cronoTasks"
 import server from "./apollo"
-import ErClient from "./erClient"
-import Extractor from "./extractor"
+const port = process.env.PORT || 3000 || 80
 
-const extractor = new Extractor()
-const erClient = new ErClient()
-server.listen().then((listenData) => {
-    console.log("listening in port:", listenData.port, "\n", listenData.url)
-})
-extractor.crono()
-erClient.crono()
+async function main () {
+    await server.start()
+    server.applyMiddleware({app})
+    await initCronoTasks()
+    app.listen(port,()=>{
+        console.log("server listening in port:",port)
+    })
+}
+
+main()
+
 
 
