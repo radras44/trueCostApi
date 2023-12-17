@@ -3,9 +3,10 @@ dotenv.config()
 import app from "./app"
 import initCronoTasks from "./cronoTasks"
 import server from "./apollo"
+import DataManager from "./utils/classes/dataManager"
 const port = process.env.PORT || 3000 || 80
 
-async function main () {
+async function main () { 
     await server.start()
     server.applyMiddleware({app})
     await initCronoTasks()

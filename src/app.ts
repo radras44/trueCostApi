@@ -1,13 +1,17 @@
 import express from "express"
-import server from "./apollo"
+import rateLimit from "express-rate-limit"
 
 const app = express()
 
+
+app.use(rateLimit({
+    windowMs : 1000 * 60,
+    max : 50,
+    message : "to many request, try later"
+}))
 app.use((req,res,next)=>{
     const auth = req.headers.authorization || null
     const apiKey = process.env.API_KEY || null
-    console.log("auth:",auth)
-    console.log("apikey",apiKey)
     if(!apiKey){
         return res.status(500).json({error : "server error, try again later"})
     }

@@ -1,0 +1,630 @@
+{
+    "updateDate": "2023-12-17T21:21:23.597Z",
+    "data": {
+        "España": {
+            "country": "España",
+            "date": "01/09/2012",
+            "general": 0.21
+        },
+        "Alemania": {
+            "country": "Alemania",
+            "date": "01/01/2007",
+            "general": 0.19
+        },
+        "Reino": {
+            "country": "Reino",
+            "date": "04/01/2011",
+            "general": 0.2
+        },
+        "Francia": {
+            "country": "Francia",
+            "date": "01/01/2014",
+            "general": 0.2
+        },
+        "Italia": {
+            "country": "Italia",
+            "date": "01/10/2013",
+            "general": 0.22
+        },
+        "Portugal": {
+            "country": "Portugal",
+            "date": "01/01/2011",
+            "general": 0.23
+        },
+        "Japón": {
+            "country": "Japón",
+            "date": "01/01/2020",
+            "general": 0.1
+        },
+        "China": {
+            "country": "China",
+            "date": "01/01/2020",
+            "general": 0.13
+        },
+        "Emiratos": {
+            "country": "Emiratos",
+            "date": "01/01/2018",
+            "general": 0.05
+        },
+        "Antigua": {
+            "country": "Antigua",
+            "date": "01/01/2019",
+            "general": 0.15
+        },
+        "Albania": {
+            "country": "Albania",
+            "date": "01/01/2006",
+            "general": 0.2
+        },
+        "Armenia": {
+            "country": "Armenia",
+            "date": "01/01/2006",
+            "general": 0.2
+        },
+        "Angola": {
+            "country": "Angola",
+            "date": "01/01/2013",
+            "general": 0.1
+        },
+        "Argentina": {
+            "country": "Argentina",
+            "date": "01/01/2006",
+            "general": 0.21
+        },
+        "Austria": {
+            "country": "Austria",
+            "date": "01/01/2016",
+            "general": 0.2
+        },
+        "Australia": {
+            "country": "Australia",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Bosnia": {
+            "country": "Bosnia",
+            "date": "01/01/2006",
+            "general": 0.17
+        },
+        "Barbados": {
+            "country": "Barbados",
+            "date": "01/01/2011",
+            "general": 0.17
+        },
+        "Bangladés": {
+            "country": "Bangladés",
+            "date": "01/01/2006",
+            "general": 0.15
+        },
+        "Bélgica": {
+            "country": "Bélgica",
+            "date": "01/01/2006",
+            "general": 0.21
+        },
+        "Bulgaria": {
+            "country": "Bulgaria",
+            "date": "01/04/2011",
+            "general": 0.2
+        },
+        "Baréin": {
+            "country": "Baréin",
+            "date": "01/01/2019",
+            "general": 0.05
+        },
+        "Bolivia": {
+            "country": "Bolivia",
+            "date": "01/01/2006",
+            "general": 0.13
+        },
+        "Brasil": {
+            "country": "Brasil",
+            "date": "01/01/2017",
+            "general": 0.18
+        },
+        "Bahamas": {
+            "country": "Bahamas",
+            "date": "01/01/2019",
+            "general": 0.12
+        },
+        "Botsuana": {
+            "country": "Botsuana",
+            "date": "01/01/2011",
+            "general": 0.12
+        },
+        "Bielorrusia": {
+            "country": "Bielorrusia",
+            "date": "01/01/2010",
+            "general": 0.2
+        },
+        "Canadá": {
+            "country": "Canadá",
+            "date": "01/01/2008",
+            "general": 0.05
+        },
+        "Suiza": {
+            "country": "Suiza",
+            "date": "01/01/2018",
+            "general": 0.07
+        },
+        "Chile": {
+            "country": "Chile",
+            "date": "01/01/2006",
+            "general": 0.19
+        },
+        "Camerún": {
+            "country": "Camerún",
+            "date": "01/01/2020",
+            "general": 0.19
+        },
+        "Colombia": {
+            "country": "Colombia",
+            "date": "01/01/2017",
+            "general": 0.19
+        },
+        "Costa": {
+            "country": "Costa",
+            "date": "01/01/2006",
+            "general": 0.13
+        },
+        "Chipre": {
+            "country": "Chipre",
+            "date": "13/01/2014",
+            "general": 0.19
+        },
+        "Chequia": {
+            "country": "Chequia",
+            "date": "01/01/2015",
+            "general": 0.21
+        },
+        "Dinamarca": {
+            "country": "Dinamarca",
+            "date": "01/01/1992",
+            "general": 0.25
+        },
+        "Dominica": {
+            "country": "Dominica",
+            "date": "01/01/2019",
+            "general": 0.15
+        },
+        "República": {
+            "country": "República",
+            "date": "01/01/2013",
+            "general": 0.18
+        },
+        "Argelia": {
+            "country": "Argelia",
+            "date": "01/01/2017",
+            "general": 0.19
+        },
+        "Ecuador": {
+            "country": "Ecuador",
+            "date": "01/01/2006",
+            "general": 0.12
+        },
+        "Estonia": {
+            "country": "Estonia",
+            "date": "01/07/2009",
+            "general": 0.2
+        },
+        "Egipto": {
+            "country": "Egipto",
+            "date": "01/01/2017",
+            "general": 0.14
+        },
+        "Finlandia": {
+            "country": "Finlandia",
+            "date": "01/01/2013",
+            "general": 0.24
+        },
+        "Fiyi": {
+            "country": "Fiyi",
+            "date": "01/01/2016",
+            "general": 0.09
+        },
+        "Granada": {
+            "country": "Granada",
+            "date": "01/01/2019",
+            "general": 0.15
+        },
+        "Georgia": {
+            "country": "Georgia",
+            "date": "01/01/2012",
+            "general": 0.18
+        },
+        "Ghana": {
+            "country": "Ghana",
+            "date": "01/01/2019",
+            "general": 0.18
+        },
+        "Grecia": {
+            "country": "Grecia",
+            "date": "01/06/2016",
+            "general": 0.24
+        },
+        "Guatemala": {
+            "country": "Guatemala",
+            "date": "01/01/2006",
+            "general": 0.12
+        },
+        "Honduras": {
+            "country": "Honduras",
+            "date": "01/01/2014",
+            "general": 0.15
+        },
+        "Croacia": {
+            "country": "Croacia",
+            "date": "01/01/2013",
+            "general": 0.25
+        },
+        "Hungría": {
+            "country": "Hungría",
+            "date": "01/01/2012",
+            "general": 0.27
+        },
+        "Indonesia": {
+            "country": "Indonesia",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Irlanda": {
+            "country": "Irlanda",
+            "date": "01/01/2012",
+            "general": 0.23
+        },
+        "Israel": {
+            "country": "Israel",
+            "date": "01/01/2015",
+            "general": 0.17
+        },
+        "India": {
+            "country": "India",
+            "date": "01/01/2018",
+            "general": 0.18
+        },
+        "Islandia": {
+            "country": "Islandia",
+            "date": "01/01/2015",
+            "general": 0.24
+        },
+        "Jamaica": {
+            "country": "Jamaica",
+            "date": "01/01/2019",
+            "general": 0.16
+        },
+        "Jordania": {
+            "country": "Jordania",
+            "date": "01/01/2011",
+            "general": 0.16
+        },
+        "Kenia": {
+            "country": "Kenia",
+            "date": "01/01/2012",
+            "general": 0.16
+        },
+        "Camboya": {
+            "country": "Camboya",
+            "date": "01/01/2010",
+            "general": 0.1
+        },
+        "San": {
+            "country": "San",
+            "date": "01/01/2019",
+            "general": 0.16
+        },
+        "Corea": {
+            "country": "Corea",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Kazajistán": {
+            "country": "Kazajistán",
+            "date": "01/01/2009",
+            "general": 0.12
+        },
+        "Líbano": {
+            "country": "Líbano",
+            "date": "01/01/2019",
+            "general": 0.11
+        },
+        "Santa": {
+            "country": "Santa",
+            "date": "01/01/2019",
+            "general": 0.12
+        },
+        "Liechtenstein": {
+            "country": "Liechtenstein",
+            "date": "01/01/2018",
+            "general": 0.07
+        },
+        "Sri": {
+            "country": "Sri",
+            "date": "01/01/2020",
+            "general": 0.08
+        },
+        "Lituania": {
+            "country": "Lituania",
+            "date": "01/09/2009",
+            "general": 0.21
+        },
+        "Luxemburgo": {
+            "country": "Luxemburgo",
+            "date": "01/01/2015",
+            "general": 0.17
+        },
+        "Letonia": {
+            "country": "Letonia",
+            "date": "01/07/2012",
+            "general": 0.21
+        },
+        "Marruecos": {
+            "country": "Marruecos",
+            "date": "01/01/2013",
+            "general": 0.2
+        },
+        "Moldavia": {
+            "country": "Moldavia",
+            "date": "01/01/2015",
+            "general": 0.2
+        },
+        "Montenegro": {
+            "country": "Montenegro",
+            "date": "01/01/2019",
+            "general": 0.21
+        },
+        "Macedonia": {
+            "country": "Macedonia",
+            "date": "01/01/2006",
+            "general": 0.18
+        },
+        "Mongolia": {
+            "country": "Mongolia",
+            "date": "01/01/2018",
+            "general": 0.1
+        },
+        "Malta": {
+            "country": "Malta",
+            "date": "01/01/2011",
+            "general": 0.18
+        },
+        "Mauricio": {
+            "country": "Mauricio",
+            "date": "01/01/2006",
+            "general": 0.15
+        },
+        "Malaui": {
+            "country": "Malaui",
+            "date": "01/01/2013",
+            "general": 0.16
+        },
+        "México": {
+            "country": "México",
+            "date": "01/01/2010",
+            "general": 0.16
+        },
+        "Malasia": {
+            "country": "Malasia",
+            "date": "01/01/2019",
+            "general": 0.1
+        },
+        "Mozambique": {
+            "country": "Mozambique",
+            "date": "01/01/2006",
+            "general": 0.17
+        },
+        "Namibia": {
+            "country": "Namibia",
+            "date": "01/01/2011",
+            "general": 0.15
+        },
+        "Nigeria": {
+            "country": "Nigeria",
+            "date": "01/01/2020",
+            "general": 0.07
+        },
+        "Nicaragua": {
+            "country": "Nicaragua",
+            "date": "01/01/2013",
+            "general": 0.15
+        },
+        "Países": {
+            "country": "Países",
+            "date": "01/10/2012",
+            "general": 0.21
+        },
+        "Noruega": {
+            "country": "Noruega",
+            "date": "01/01/2006",
+            "general": 0.25
+        },
+        "Nueva": {
+            "country": "Nueva",
+            "date": "01/01/2011",
+            "general": 0.15
+        },
+        "Panamá": {
+            "country": "Panamá",
+            "date": "01/01/2010",
+            "general": 0.07
+        },
+        "Perú": {
+            "country": "Perú",
+            "date": "01/01/2011",
+            "general": 0.18
+        },
+        "Papúa": {
+            "country": "Papúa",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Filipinas": {
+            "country": "Filipinas",
+            "date": "01/01/2007",
+            "general": 0.12
+        },
+        "Pakistán": {
+            "country": "Pakistán",
+            "date": "01/01/2013",
+            "general": 0.17
+        },
+        "Polonia": {
+            "country": "Polonia",
+            "date": "01/01/2011",
+            "general": 0.23
+        },
+        "Paraguay": {
+            "country": "Paraguay",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Rumanía": {
+            "country": "Rumanía",
+            "date": "01/01/2016",
+            "general": 0.2
+        },
+        "Serbia": {
+            "country": "Serbia",
+            "date": "01/01/2012",
+            "general": 0.2
+        },
+        "Rusia": {
+            "country": "Rusia",
+            "date": "01/01/2019",
+            "general": 0.2
+        },
+        "Arabia": {
+            "country": "Arabia",
+            "date": "01/07/2020",
+            "general": 0.15
+        },
+        "Sudán": {
+            "country": "Sudán",
+            "date": "01/01/2017",
+            "general": 0.15
+        },
+        "Suecia": {
+            "country": "Suecia",
+            "date": "01/01/1996",
+            "general": 0.25
+        },
+        "Singapur": {
+            "country": "Singapur",
+            "date": "01/01/2008",
+            "general": 0.07
+        },
+        "Eslovenia": {
+            "country": "Eslovenia",
+            "date": "01/07/2013",
+            "general": 0.22
+        },
+        "Eslovaquia": {
+            "country": "Eslovaquia",
+            "date": "01/01/2011",
+            "general": 0.2
+        },
+        "Sierra": {
+            "country": "Sierra",
+            "date": "01/01/2014",
+            "general": 0.15
+        },
+        "Senegal": {
+            "country": "Senegal",
+            "date": "01/01/2018",
+            "general": 0.18
+        },
+        "El": {
+            "country": "El",
+            "date": "01/01/2012",
+            "general": 0.13
+        },
+        "Eswatini": {
+            "country": "Eswatini",
+            "date": "01/01/2018",
+            "general": 0.15
+        },
+        "Tailandia": {
+            "country": "Tailandia",
+            "date": "01/01/2006",
+            "general": 0.07
+        },
+        "Túnez": {
+            "country": "Túnez",
+            "date": "01/01/2006",
+            "general": 0.18
+        },
+        "Türkiye": {
+            "country": "Türkiye",
+            "date": "01/01/2006",
+            "general": 0.18
+        },
+        "Trinidad": {
+            "country": "Trinidad",
+            "date": "01/01/2016",
+            "general": 0.12
+        },
+        "Taiwan": {
+            "country": "Taiwan",
+            "date": "01/01/2006",
+            "general": 0.05
+        },
+        "Tanzania": {
+            "country": "Tanzania",
+            "date": "01/01/2010",
+            "general": 0.18
+        },
+        "Ucrania": {
+            "country": "Ucrania",
+            "date": "01/01/2006",
+            "general": 0.2
+        },
+        "Uganda": {
+            "country": "Uganda",
+            "date": "01/01/2012",
+            "general": 0.18
+        },
+        "Uruguay": {
+            "country": "Uruguay",
+            "date": "01/01/2008",
+            "general": 0.22
+        },
+        "Venezuela": {
+            "country": "Venezuela",
+            "date": "01/01/2020",
+            "general": 0.16
+        },
+        "Viet": {
+            "country": "Viet",
+            "date": "01/01/2006",
+            "general": 0.1
+        },
+        "Vanuatu": {
+            "country": "Vanuatu",
+            "date": "01/01/2018",
+            "general": 0.15
+        },
+        "Samoa": {
+            "country": "Samoa",
+            "date": "01/01/2011",
+            "general": 0.15
+        },
+        "Yemen": {
+            "country": "Yemen",
+            "date": "01/01/2006",
+            "general": 0.05
+        },
+        "Sudáfrica": {
+            "country": "Sudáfrica",
+            "date": "01/01/2019",
+            "general": 0.15
+        },
+        "Zambia": {
+            "country": "Zambia",
+            "date": "01/01/2008",
+            "general": 0.16
+        },
+        "Zimbabue": {
+            "country": "Zimbabue",
+            "date": "01/01/2020",
+            "general": 0.14
+        }
+    }
+}

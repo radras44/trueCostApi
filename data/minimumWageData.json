@@ -1,24 +1,24 @@
 {
-    "updateDate": "2023-12-14T02:02:37.837Z",
+    "updateDate": "2023-12-17T21:21:25.708Z",
     "data": {
         "Argentina": {
             "country": "Argentina",
-            "usd": "195",
+            "usd": "197",
             "local": "$ 156 000 pesos argentinos[N. 1] [1]"
         },
         "Bolivia": {
             "country": "Bolivia",
-            "usd": "342",
+            "usd": "340",
             "local": "Bs 2362 bolivianos[2]"
         },
         "Brasil": {
             "country": "Brasil",
-            "usd": "266",
+            "usd": "267",
             "local": "R$ 1320 reales[3]"
         },
         "Chile": {
             "country": "Chile",
-            "usd": "524",
+            "usd": "529",
             "local": "$ 460 000 pesos chilenos[4]"
         },
         "Colombia": {
@@ -28,7 +28,7 @@
         },
         "Costa Rica": {
             "country": "Costa Rica",
-            "usd": "666",
+            "usd": "664",
             "local": "₡ 350 975 colones[N. 3] [7]"
         },
         "Cuba": {
@@ -48,23 +48,23 @@
         },
         "Guatemala": {
             "country": "Guatemala",
-            "usd": "404",
+            "usd": "403",
             "local": "Q. 3166,38 quetzales[N. 6] [11]"
         },
         "Haití": {
             "country": "Haití",
-            "usd": "81",
+            "usd": "80",
             "local": "G 10 645,83 gourdes[N. 7] [12]"
         },
         "Honduras": {
             "country": "Honduras",
-            "usd": "329",
+            "usd": "328",
             "local": "L 8134 lempiras[N. 8] [13]"
         },
         "México": {
             "country": "México",
-            "usd": "366",
-            "local": "$ 6309,63 pesos mexicanos[N. 9] [14]"
+            "usd": "439",
+            "local": "$ 7571,62 pesos mexicanos[N. 9] [14]"
         },
         "Nicaragua": {
             "country": "Nicaragua",
@@ -83,17 +83,17 @@
         },
         "Perú": {
             "country": "Perú",
-            "usd": "270",
+            "usd": "271",
             "local": "S/ 1025 soles[18]"
         },
         "República Dominicana": {
             "country": "República Dominicana",
-            "usd": "202",
+            "usd": "200",
             "local": "RD$ 11 500 pesos dominicanos[N. 11] [19]"
         },
         "Uruguay": {
             "country": "Uruguay",
-            "usd": "537",
+            "usd": "525",
             "local": "$ 21 107 pesos uruguayos[20]"
         },
         "Venezuela": {

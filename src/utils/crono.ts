@@ -4,9 +4,11 @@ interface Options {
     lastUpdateDate: Date
     action : () => Promise<void> | void
     initAction? : () => Promise<void> | void
+    name : string
 }
 
-export function createScheduledTask({ comprobationTime, minTimeBetweenUpdate, lastUpdateDate ,action}: Options) {
+export function createScheduledTask({ comprobationTime, minTimeBetweenUpdate, lastUpdateDate ,action,name}: Options) {
+    console.log("iniciando tarea programada:",name)
     setInterval(async () => {
         console.log("comprobacion Extractor-crono...")
         const currentDate = new Date()

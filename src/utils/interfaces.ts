@@ -19,6 +19,17 @@ export interface minimumWageData {
     data : {[key : string] : minimumWage}
 }
 
+export interface Iva {
+    country : string | null
+    date : string | null
+    general : number | null
+}
+
+export interface IvaData {
+    updateDate : Date,
+    data : {[key : string] : Iva}
+}
+
 export interface GQLSchema {
     queries : {[key : string] : Function}
     mutations : {[key : string] : Function}

@@ -2,10 +2,10 @@ const schema =`#graphql
     type CurrencyResponse{
         status : Boolean!
         error : String
-        result : Float!
+        result : Float
     }
     input RelativeCostArgs{
-        mount : Float!
+        amount : Float!
         from : String!
         to : String!
     }
@@ -16,7 +16,7 @@ const schema =`#graphql
     input ConvertCurrencyInput {
         from : String!
         to : String!
-        mount : Float!
+        amount : Float!
     }
 
     type Query {

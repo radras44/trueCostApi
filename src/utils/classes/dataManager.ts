@@ -1,21 +1,31 @@
-import { ErData, minimumWage, minimumWageData } from "../interfaces"
+import { ErData, IvaData, minimumWage, minimumWageData } from "../interfaces"
 import fs from "fs"
 import path from "path"
 export default class DataManager {
     minimumWageData: minimumWageData | null
     erData: ErData | null
+    ivaData: IvaData | null
     erDataPath: string
     minimumWageDataPath: string
-    currencyCountry : {[key : string] : string} 
+    ivaDataPath: string
+    currencyCountry: { [key: string]: string }
 
     constructor() {
-        this.erDataPath = path.join(__dirname, "..","..","..", "data", "erClientData.json")
-        this.minimumWageDataPath = path.join(__dirname, "..","..","..", "data", "minimumWageData.json")
+        this.erDataPath = path.join(__dirname, "..", "..", "..", "data", "erClientData.json")
+        this.minimumWageDataPath = path.join(__dirname, "..", "..", "..", "data", "minimumWageData.json")
+        this.ivaDataPath = path.join(__dirname, "..", "..", "..", "data", "ivaData.json")
         this.minimumWageData = null
         this.erData = null
+        this.ivaData = null
         this.currencyCountry = {
-            CLP : "Chile",
-            ARS : "Argentina"
+            CLP: "Chile",
+            ARS: "Argentina",
+            MXN : "México",
+            COP: "Colombia",
+            PEN : "Perú",
+            HNL : "Honduras",
+            GTP : "Guatemala",
+            EUR : "España"
         }
     }
 
@@ -23,8 +33,8 @@ export default class DataManager {
         try {
             const jsonData: minimumWageData | null = require(this.minimumWageDataPath) || null
             this.minimumWageData = jsonData
-            console.log("Data loaded, wage-data:")
-            console.dir(jsonData,{depth : 0})
+            console.log("Data loaded, minimumWage-data:")
+            console.dir(jsonData, { depth: 0 })
             return jsonData
         } catch (error) {
             return null
@@ -34,8 +44,8 @@ export default class DataManager {
     updateminimumWageData(data: minimumWageData) {
         try {
             fs.writeFileSync(this.minimumWageDataPath, JSON.stringify(data, null, 4))
-            console.log("data updated, new data:")
-            console.dir(data,{depth : 0})
+            console.log("data updated, minimumWage-data:")
+            console.dir(data, { depth: 0 })
             return data
         } catch (error) {
             console.log(error)
@@ -47,7 +57,7 @@ export default class DataManager {
             const jsonData: ErData | null = require(this.erDataPath) || null
             this.erData = jsonData
             console.log("Data loaded, er-data:")
-            console.dir(jsonData,{depth : 0})
+            console.dir(jsonData, { depth: 0 })
             return jsonData
         } catch (error) {
             return null
@@ -57,8 +67,8 @@ export default class DataManager {
     updaeErData(data: ErData): ErData | null {
         try {
             fs.writeFileSync(this.erDataPath, JSON.stringify(data, null, 4))
-            console.log("data updated, new data:")
-            console.dir(data,{depth : 0})
+            console.log("data updated, er-data:")
+            console.dir(data, { depth: 0 })
             return data
         } catch (error) {
             console.log(error)
@@ -66,23 +76,76 @@ export default class DataManager {
         }
     }
 
-    getCurrency (currencyString : string) {
+    loadIvaData() {
+        try {
+            const jsonData: IvaData | null = require(this.ivaDataPath) || null
+            this.ivaData = jsonData
+            console.log("Data loaded, iva-data:")
+            console.dir(jsonData, { depth: 0 })
+            return jsonData
+        } catch (error) {
+            return null
+        }
+    }
+
+    updateIvaData(data: IvaData) {
+        try {
+            fs.writeFileSync(this.ivaDataPath, JSON.stringify(data, null, 4))
+            console.log("data updated, iva-data:")
+            console.dir(data, { depth: 0 })
+            return data
+        } catch (error) {
+            console.log(error)
+            return null
+        }
+    }
+
+    getEr(currencyString: string) : number | null {
         const currency = this.erData.data.results[currencyString] || null
         return currency
     }
 
-    getMinimumWage(currency : string,type : "currency" | "usd" = "currency") : number | null {
-        console.log("currency:",currency)
-        const country = this.currencyCountry[currency] || " "
-        const minWage : minimumWage | null = this.minimumWageData.data[country] || null
-        const dolarInCurrency = this.erData.data.results[currency] || null
-        if(type = "usd"){
-            return Number(minWage.usd)
+    getIva(currencyString : string) :  number | null {
+        const country = this.currencyCountry[currencyString] || " "
+        const iva = this.ivaData.data[country] || null
+        if(!iva){return null}
+        return iva.general
+    }
+
+    convert(amount : number,from : string,to : string) : {error : null | string,result : number | null} {
+        console.log(amount)
+        const base = this.erData.data.base || "EUR"
+        const baseInFrom = this.getEr(from)
+        console.log(baseInFrom)
+        if (!baseInFrom) {return {error : `${from} is not supported`,result : null}}
+        if (to == base) {
+            return {error : null,result : amount / baseInFrom}
         }
-        console.log(dolarInCurrency)
-        if(!minWage || !dolarInCurrency) {
+        const baseInTo = this.getEr(to)
+        console.log(baseInTo)
+        if (!baseInTo) { return {error : `${to} is not supported`,result : null} }
+        if (from == base) {
+            return {error : null,result : amount * baseInTo}
+        }
+        console.log("usd in to:", baseInTo)
+        const result = (amount / baseInFrom) * baseInTo
+        console.log("result:",result)
+        return {
+            result : result,
+            error : null
+        }
+    }
+
+    getMinimumWage(currency: string): number | null {
+        if (!this.minimumWageData) { throw Error("minimum wage data has not been loaded") }
+        const country = this.currencyCountry[currency] || " "
+        const minWageObj: minimumWage | null = this.minimumWageData.data[country] || null
+        if(!minWageObj){return null}
+        const minWageValue = this.convert(parseFloat(minWageObj.usd),"USD",currency)
+        if(!minWageValue.error){
+            return minWageValue.result
+        }else{
             return null
         }
-        return dolarInCurrency * Number(minWage.usd)
     }
 }
