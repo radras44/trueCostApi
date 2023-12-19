@@ -11,7 +11,7 @@ const md = MarkdounIt({
 app.use(cors())
 app.use(rateLimit({
     windowMs : 1000 * 60,
-    max : 50,
+    max : 30,
     message : "to many request, try later"
 }))
 

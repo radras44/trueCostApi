@@ -1,10 +1,10 @@
 # Uso
 
-esta Api usa graphql, por lo que todas las peticiones se hacen al siguiente endpoint:
+Esta API utiliza GraphQL, por lo que todas las peticiones se realizan al siguiente endpoint:
 ```
 https://truecostapi.onrender.com/graphql
 ```
-las peticiones tienen que enviar una consulta gql, aqui un ejemplo de como se tendria que hacer esto, es similar a una peticion normal.
+Las peticiones deben enviar una consulta GraphQL. Aquí tienes un ejemplo de cómo se debería hacer esto, similar a una petición normal.
 
 ### headers requeridos
 ```js
@@ -34,13 +34,13 @@ async function fetching() {
     }
 }
 ```
-Tambien puedes ingresar a [https://truecostapi.onrender.com/graphql] directamente y hacer consultas haciendo uso de la interfaz de usuario
+También puedes ingresar directamente a [https://truecostapi.onrender.com/graphql] y hacer consultas haciendo uso de la interfaz de usuario.
 
 
 ## Resolvers
 
 ### convertCurrency
-Permite hacer cambios de divisas
+Permite realizar cambios de divisas.
 ```
 args : {
     from : String!
@@ -65,7 +65,7 @@ query {
 
 ```
 ### countryInfo
-Permite obtener informacion disponible en la api sobre algun pais
+Permite obtener información disponible en la API sobre algún país.
 ```
 args : {
     country : String!
@@ -90,7 +90,7 @@ query {
 }
 ```
 ### relativeCost
-Permite hacer cambios de divisa segun el ciertos factores como el sueldo minimo y el iva general en los paises correspondientes
+Permite realizar cambios de divisa según ciertos factores como el sueldo mínimo y el IVA general en los países correspondientes.
 ```
 args : {
     from : String!
