@@ -41,7 +41,24 @@ const resolvers = {
                     message : ""
                 }
             }
-
+        },
+        countryInfo : (_,args) => {
+            const currency = dataManager.searchCountry(args.data.country) || null
+            console.log(currency)
+            if(currency == null){return {status : false,error : `${args.data.country} not found or not supported`}}
+            const minimumWage = dataManager.getMinimumWage(currency) || null
+            const ivaGeneral = dataManager.getIva(currency) || null
+            const usdInCurrency = dataManager.convert(1,"USD",currency) || null
+            const response = {
+                status : true,
+                country : args.data.country,
+                isoCode : currency,
+                usdInCurrency : usdInCurrency.result || null,
+                minimumWage : minimumWage,
+                ivaGeneral : ivaGeneral 
+            }
+            console.log(response)
+            return response
         }
     }
 }

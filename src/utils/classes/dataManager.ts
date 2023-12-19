@@ -29,6 +29,15 @@ export default class DataManager {
         }
     }
 
+    searchCountry (country : string) {
+        for(const key in this.currencyCountry){
+            if(this.currencyCountry[key] == country){
+                return key
+            }
+        }
+        return null
+    }
+
     loadminimumWageData(): minimumWageData | null {
         try {
             const jsonData: minimumWageData | null = require(this.minimumWageDataPath) || null

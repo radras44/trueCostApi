@@ -1,9 +1,10 @@
 import dotenv from "dotenv"
 dotenv.config()
+
 import app from "./app"
-import initCronoTasks from "./cronoTasks"
 import server from "./apollo"
-import DataManager from "./utils/classes/dataManager"
+import initCronoTasks from "./cronoTasks"
+
 const port = process.env.PORT || 3000 || 80
 
 async function main () { 

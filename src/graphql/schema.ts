@@ -1,4 +1,4 @@
-const schema =`#graphql
+const schema = `#graphql
     type CurrencyResponse{
         status : Boolean!
         error : String
@@ -21,6 +21,24 @@ const schema =`#graphql
 
     type Query {
         convertCurrency (data : ConvertCurrencyInput) : CurrencyResponse
+    }
+
+    input CountryInfoInput {
+        country : String!
+    } 
+
+    type CountryInfoResponse {
+        status : Boolean!
+        error : String
+        country : String
+        isoCode : String
+        usdInCurrency : Float
+        minimumWage : Float
+        ivaGeneral : Float
+    }
+
+    type Query {
+        countryInfo (data : CountryInfoInput) : CountryInfoResponse
     }
 `;
 
