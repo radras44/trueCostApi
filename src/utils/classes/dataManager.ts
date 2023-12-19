@@ -122,23 +122,22 @@ export default class DataManager {
     }
 
     convert(amount : number,from : string,to : string) : {error : null | string,result : number | null} {
-        console.log(amount)
         const base = this.erData.data.base || "EUR"
         const baseInFrom = this.getEr(from)
-        console.log(baseInFrom)
+   
         if (!baseInFrom) {return {error : `${from} is not supported`,result : null}}
         if (to == base) {
             return {error : null,result : amount / baseInFrom}
         }
         const baseInTo = this.getEr(to)
-        console.log(baseInTo)
+
         if (!baseInTo) { return {error : `${to} is not supported`,result : null} }
         if (from == base) {
             return {error : null,result : amount * baseInTo}
         }
-        console.log("usd in to:", baseInTo)
+ 
         const result = (amount / baseInFrom) * baseInTo
-        console.log("result:",result)
+
         return {
             result : result,
             error : null

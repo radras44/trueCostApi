@@ -8,7 +8,7 @@ interface Options {
 }
 
 export function createScheduledTask({ comprobationTime, minTimeBetweenUpdate, lastUpdateDate ,action,name}: Options) {
-    console.log("iniciando tarea programada:",name)
+    console.log(name,"has been initialized")
     setInterval(async () => {
         console.log("comprobacion Extractor-crono...")
         const currentDate = new Date()

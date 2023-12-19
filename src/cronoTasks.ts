@@ -5,6 +5,8 @@ const extractor = new Extractor()
 const erClient = new ErClient()
 
 export default function initCronoTasks () {
+    extractor.main()
+    erClient.main()
     extractor.crono()
     erClient.crono()
 }

@@ -5,8 +5,11 @@ import { createScheduledTask } from "../crono";
 export default class Extractor extends DataManager {
     browser: Browser
     page: Page
+    ivaURL : string | null
+    minimumWageURL : string | null
     constructor() {
         super()
+        this.config()
         this.minimumWageData = this.loadminimumWageData()
         this.ivaData = this.loadIvaData()
     }
@@ -26,6 +29,14 @@ export default class Extractor extends DataManager {
         await this.extractWageData()
     }
 
+    config () {
+        this.ivaURL = process.env.IVA_URL || null
+        this.minimumWageURL = process.env.MINIMUM_WAGE_URL || null
+        if(!this.ivaURL || !this.minimumWageURL){
+            throw new Error("Environment variables in the extractor are undefined.")
+        }
+    }
+
     async initPuppeteer(headless: boolean = true) {
         this.browser = await puppeteer.launch({ headless: headless })
         this.page = await this.browser.newPage()
@@ -37,8 +48,7 @@ export default class Extractor extends DataManager {
 
     async extractWageData() {
         await this.initPuppeteer(true)
-        const minimumWage_url = `https://es.wikipedia.org/wiki/Plantilla:Salarios_m%C3%ADnimos_en_Latinoam%C3%A9rica`
-        await this.page.goto(minimumWage_url)
+        await this.page.goto(this.minimumWageURL)
         const rowsSelector: string = "table.wikitable tbody tr"
         await this.page.waitForSelector(rowsSelector)
 
@@ -74,7 +84,6 @@ export default class Extractor extends DataManager {
 
                 for (let j = 0; j < cols.length; j++) {
                     const col = cols[j]
-                    console.log(col)
                     let text: string | null = null
                     text = col.textContent.trim() || null
                     const key = keys[j]
@@ -109,7 +118,6 @@ export default class Extractor extends DataManager {
         await this.closePuppeteer()
     }
     async extractIvaData() {
-        const url = "https://datosmacro.expansion.com/impuestos/iva"
         const trSelector = "#tb1 tbody tr"
         await this.initPuppeteer(true)
         await this.page.setRequestInterception(true);
@@ -124,7 +132,7 @@ export default class Extractor extends DataManager {
                 request.continue();
             }
         });
-        await this.page.goto(url)
+        await this.page.goto(this.ivaURL)
         await this.page.waitForSelector(trSelector)
 
         interface EvReturn {
@@ -136,14 +144,14 @@ export default class Extractor extends DataManager {
             const allIva: { [key: string]: Iva } = {}
             const defaultReturn: EvReturn = { status: false, result: {} }
             const rows: HTMLTableRowElement[] | null = Array.from(document.querySelectorAll(trSelector)) || null
-            console.log(rows)
+
             const layout: Iva = { country: null, date: null, general: null }
             if (!rows) { return defaultReturn }
             for (let i = 0; i < rows.length; i++) {
                 const ivaObj: Iva = { ...layout }
                 const row: HTMLTableRowElement = rows[i]
                 const cols: HTMLTableCellElement[] | null = Array.from(row.querySelectorAll("td")) || null
-                console.log(cols)
+  
                 if (!cols) { return defaultReturn }
                 for (let j = 0; j < cols.length; j++) {
                     const col: HTMLTableCellElement = cols[j]
@@ -158,7 +166,6 @@ export default class Extractor extends DataManager {
                             break;
                     }
                 }
-                console.log(ivaObj)
 
                 if (ivaObj.country && ivaObj.general) {
                     allIva[ivaObj.country] = ivaObj
@@ -167,7 +174,7 @@ export default class Extractor extends DataManager {
             }
             return { status: true, result: allIva }
         }, trSelector)
-        console.log(data)
+        
         if (data.status === true) {
             const ivaData: IvaData = {
                 updateDate: new Date(),

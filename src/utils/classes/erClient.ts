@@ -3,9 +3,20 @@ import DataManager from "./dataManager"
 import { createScheduledTask } from "../crono"
 export default class ErClient extends DataManager {
     erData: ErData | null
+    baseURL : string | null
+    apiKey : string | null
     constructor() {
         super()
+        this.config()
         this.erData = super.loadErData()
+    }
+
+    config() {
+        this.baseURL=process.env.ER_URL || null
+        this.apiKey=process.env.ER_API_KEY || null
+        if(!this.baseURL || !this.apiKey){
+            throw new Error("Environment variables in the ErClient are undefined.")
+        }
     }
 
     async crono () {
@@ -27,10 +38,7 @@ export default class ErClient extends DataManager {
 
     async getErData(): Promise<{ status: boolean, data: ErData | null }> {
         const defaultReturn = { status: false, data: null }
-        const api_key = process.env.ER_API_KEY || null
-        console.log(api_key)
-        if (!api_key){return defaultReturn}
-        const url = `http://api.exchangeratesapi.io/v1/latest?access_key=${api_key}`
+        const url = `${this.baseURL}?access_key=${this.apiKey}`
         try {
             const res = await fetch(url, {
                 method: "GET",
@@ -54,7 +62,7 @@ export default class ErClient extends DataManager {
             }
             return { status: true, data: newErData }
         } catch (error) {
-            console.log(error)
+            console.error(error)
             return { status: false, data: null }
         }
     }
