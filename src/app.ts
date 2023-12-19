@@ -8,12 +8,12 @@ const app = express()
 const md = MarkdounIt({
     breaks : false
 }) 
-app.use(cors())
-app.use(rateLimit({
-    windowMs : 1000 * 60,
-    max : 30,
-    message : "to many request, try later"
-}))
+// app.use(cors())
+// app.use(rateLimit({
+//     windowMs : 1000 * 60,
+//     max : 30,
+//     message : "to many request, try later"
+// }))
 
 const staticsPath = path.join(path.resolve(__dirname),"..", "src","static")
 
@@ -36,21 +36,21 @@ app.use(["/graphql"],(req,res,next)=>{
     return next()
 })
 
-// app.get("/",async(req,res)=>{
-//     const rootPath = path.resolve(__dirname)
-//     const htmlFile = await fs.readFileSync(path.join(rootPath,"..","src","static","index.html"),{encoding : "utf-8"}) || null
-//     const readmeFile = await fs.readFileSync(path.join(rootPath,"..","README.md"),{encoding : "utf-8"}) || null
+app.get("/",async(req,res)=>{
+    const rootPath = path.resolve(__dirname)
+    const htmlFile = await fs.readFileSync(path.join(rootPath,"..","src","static","index.html"),{encoding : "utf-8"}) || null
+    const readmeFile = await fs.readFileSync(path.join(rootPath,"..","README.md"),{encoding : "utf-8"}) || null
 
-//     if(!htmlFile || !readmeFile){
-//         return res.status(500).json({error : "error del servidor"})
-//     }
-//     const markedReadme = md.render(readmeFile)
-//     if(!markedReadme){
-//         return res.status(500).json({error : "error del servidor, no se pudo cargar la documentacion"})
-//     }
-//     const processedHtml =  htmlFile.replace("readme.md",markedReadme)
+    if(!htmlFile || !readmeFile){
+        return res.status(500).json({error : "error del servidor"})
+    }
+    const markedReadme = md.render(readmeFile)
+    if(!markedReadme){
+        return res.status(500).json({error : "error del servidor, no se pudo cargar la documentacion"})
+    }
+    const processedHtml =  htmlFile.replace("readme.md",markedReadme)
 
-//     return res.status(200).send(processedHtml)
-// })
+    return res.status(200).send(processedHtml)
+})
 
 export default app
