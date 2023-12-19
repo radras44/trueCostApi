@@ -17,7 +17,6 @@ app.use(rateLimit({
 
 const staticsPath = path.join(path.resolve(__dirname),"..", "src","static")
 
-console.log(staticsPath)
 app.use("/static",express.static(staticsPath))
 
 app.use(["/graphql"],(req,res,next)=>{
@@ -37,22 +36,21 @@ app.use(["/graphql"],(req,res,next)=>{
     return next()
 })
 
-app.get("/",async(req,res)=>{
-    console.log("staticPath",staticsPath)
-    const rootPath = path.resolve(__dirname)
-    const htmlFile = await fs.readFileSync(path.join(rootPath,"..","src","static","index.html"),{encoding : "utf-8"}) || null
-    const readmeFile = await fs.readFileSync(path.join(rootPath,"..","README.md"),{encoding : "utf-8"}) || null
+// app.get("/",async(req,res)=>{
+//     const rootPath = path.resolve(__dirname)
+//     const htmlFile = await fs.readFileSync(path.join(rootPath,"..","src","static","index.html"),{encoding : "utf-8"}) || null
+//     const readmeFile = await fs.readFileSync(path.join(rootPath,"..","README.md"),{encoding : "utf-8"}) || null
 
-    if(!htmlFile || !readmeFile){
-        return res.status(500).json({error : "error del servidor"})
-    }
-    const markedReadme = md.render(readmeFile)
-    if(!markedReadme){
-        return res.status(500).json({error : "error del servidor, no se pudo cargar la documentacion"})
-    }
-    const processedHtml =  htmlFile.replace("readme.md",markedReadme)
+//     if(!htmlFile || !readmeFile){
+//         return res.status(500).json({error : "error del servidor"})
+//     }
+//     const markedReadme = md.render(readmeFile)
+//     if(!markedReadme){
+//         return res.status(500).json({error : "error del servidor, no se pudo cargar la documentacion"})
+//     }
+//     const processedHtml =  htmlFile.replace("readme.md",markedReadme)
 
-    return res.status(200).send(processedHtml)
-})
+//     return res.status(200).send(processedHtml)
+// })
 
 export default app

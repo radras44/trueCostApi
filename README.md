@@ -86,7 +86,7 @@ query {
     countryInfo (data : {
         country : "Chile"
     })
-    {status,error,country,isoCode,usdInCurrency,minimumWage,ivaGeneral}
+    {status,error,country,isoCode,usdInCur rency,minimumWage,ivaGeneral}
 }
 ```
 ### relativeCost

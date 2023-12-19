@@ -1,14 +1,12 @@
 import dotenv from "dotenv"
 dotenv.config()
-async function fetching() {
+export async function fetchingTest() : Promise<void> {
     const query = `
     query {
-        relativeCost (data : {
-            amount : 1200
-            from : "ARS"
-            to : "CLP"
+        countryInfo (data : {
+            country : "Chile"
         })
-        {status,result,error}
+        {status,error,country,isoCode}
     }
     `
     try {
@@ -22,10 +20,9 @@ async function fetching() {
         })
         const json = await res.json()
         const data = json.data
-        console.log(data)
     } catch (error) {
         console.log(error)
     }
 }
 
-fetching()
+fetchingTest()
