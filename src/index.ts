@@ -11,10 +11,14 @@ const port = process.env.PORT || 3000 || 80
 async function main() {
     await server.start()
     server.applyMiddleware({ app })
-    await initCronoTasks()
+    const initCrono = process.env.INIT_CRONO || null
+    const initRenderActivator = process.env.INIT_RENDER_ACTIVATOR || null
+    if (initCrono && initCrono === "true") {
+        await initCronoTasks()
+    }
     app.listen(port, () => {
         console.log("server listening in port:", port)
-        if(process.env.PRODUCTION){
+        if (initRenderActivator && initRenderActivator === "true") {
             console.log("testing...")
             renderActivator()
         }
