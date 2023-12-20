@@ -1,5 +1,5 @@
 {
-    "updateDate": "2023-12-19T18:05:16.758Z",
+    "updateDate": "2023-12-20T00:53:43.590Z",
     "data": {
         "Argentina": {
             "country": "Argentina",
@@ -13,12 +13,12 @@
         },
         "Brasil": {
             "country": "Brasil",
-            "usd": "269",
+            "usd": "271",
             "local": "R$ 1320 reales[3]"
         },
         "Chile": {
             "country": "Chile",
-            "usd": "527",
+            "usd": "532",
             "local": "$ 460 000 pesos chilenos[4]"
         },
         "Colombia": {
@@ -58,12 +58,12 @@
         },
         "Honduras": {
             "country": "Honduras",
-            "usd": "330",
+            "usd": "329",
             "local": "L 8134 lempiras[N. 8] [13]"
         },
         "México": {
             "country": "México",
-            "usd": "441",
+            "usd": "443",
             "local": "$ 7571,62 pesos mexicanos[N. 9] [14]"
         },
         "Nicaragua": {
@@ -78,12 +78,12 @@
         },
         "Paraguay": {
             "country": "Paraguay",
-            "usd": "367",
+            "usd": "366",
             "local": "₲ 2 680 373 guaraníes[17]"
         },
         "Perú": {
             "country": "Perú",
-            "usd": "273",
+            "usd": "274",
             "local": "S/ 1025 soles[18]"
         },
         "República Dominicana": {
@@ -93,7 +93,7 @@
         },
         "Uruguay": {
             "country": "Uruguay",
-            "usd": "532",
+            "usd": "536",
             "local": "$ 21 107 pesos uruguayos[20]"
         },
         "Venezuela": {

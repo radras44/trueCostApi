@@ -20,9 +20,14 @@ export async function fetchingTest() : Promise<void> {
         })
         const json = await res.json()
         const data = json.data
+        console.log("render activator-test")
     } catch (error) {
         console.log(error)
     }
 }
-
-fetchingTest()
+export async function renderActivator() {
+    await fetchingTest()
+    setInterval(()=>{
+        fetchingTest()
+    },1000 *60 * 10)
+}

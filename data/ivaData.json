@@ -1,5 +1,5 @@
 {
-    "updateDate": "2023-12-19T18:05:14.495Z",
+    "updateDate": "2023-12-20T00:53:41.671Z",
     "data": {
         "España": {
             "country": "España",
@@ -11,8 +11,8 @@
             "date": "01/01/2007",
             "general": 0.19
         },
-        "Reino": {
-            "country": "Reino",
+        "Reino Unido": {
+            "country": "Reino Unido",
             "date": "04/01/2011",
             "general": 0.2
         },
@@ -31,6 +31,11 @@
             "date": "01/01/2011",
             "general": 0.23
         },
+        "Estados Unidos": {
+            "country": "Estados Unidos",
+            "date": "01/01/2013",
+            "general": 0
+        },
         "Japón": {
             "country": "Japón",
             "date": "01/01/2020",
@@ -41,13 +46,18 @@
             "date": "01/01/2020",
             "general": 0.13
         },
-        "Emiratos": {
-            "country": "Emiratos",
+        "Emiratos Árabes Unidos": {
+            "country": "Emiratos Árabes Unidos",
             "date": "01/01/2018",
             "general": 0.05
         },
-        "Antigua": {
-            "country": "Antigua",
+        "Afganistán": {
+            "country": "Afganistán",
+            "date": "01/01/2013",
+            "general": 0
+        },
+        "Antigua y Barbuda": {
+            "country": "Antigua y Barbuda",
             "date": "01/01/2019",
             "general": 0.15
         },
@@ -81,8 +91,8 @@
             "date": "01/01/2006",
             "general": 0.1
         },
-        "Bosnia": {
-            "country": "Bosnia",
+        "Bosnia y Herzegovina": {
+            "country": "Bosnia y Herzegovina",
             "date": "01/01/2006",
             "general": 0.17
         },
@@ -161,8 +171,8 @@
             "date": "01/01/2017",
             "general": 0.19
         },
-        "Costa": {
-            "country": "Costa",
+        "Costa Rica": {
+            "country": "Costa Rica",
             "date": "01/01/2006",
             "general": 0.13
         },
@@ -186,8 +196,8 @@
             "date": "01/01/2019",
             "general": 0.15
         },
-        "República": {
-            "country": "República",
+        "República Dominicana": {
+            "country": "República Dominicana",
             "date": "01/01/2013",
             "general": 0.18
         },
@@ -246,6 +256,11 @@
             "date": "01/01/2006",
             "general": 0.12
         },
+        "Hong Kong": {
+            "country": "Hong Kong",
+            "date": "01/01/2015",
+            "general": 0
+        },
         "Honduras": {
             "country": "Honduras",
             "date": "01/01/2014",
@@ -281,6 +296,11 @@
             "date": "01/01/2018",
             "general": 0.18
         },
+        "Irak": {
+            "country": "Irak",
+            "date": "01/01/2015",
+            "general": 0
+        },
         "Islandia": {
             "country": "Islandia",
             "date": "01/01/2015",
@@ -306,15 +326,20 @@
             "date": "01/01/2010",
             "general": 0.1
         },
-        "San": {
-            "country": "San",
+        "San Cristóbal y Nieves": {
+            "country": "San Cristóbal y Nieves",
             "date": "01/01/2019",
-            "general": 0.16
+            "general": 0.17
         },
-        "Corea": {
-            "country": "Corea",
+        "Corea del Sur": {
+            "country": "Corea del Sur",
             "date": "01/01/2006",
             "general": 0.1
+        },
+        "Kuwait": {
+            "country": "Kuwait",
+            "date": "01/01/2013",
+            "general": 0
         },
         "Kazajistán": {
             "country": "Kazajistán",
@@ -326,8 +351,8 @@
             "date": "01/01/2019",
             "general": 0.11
         },
-        "Santa": {
-            "country": "Santa",
+        "Santa Lucía": {
+            "country": "Santa Lucía",
             "date": "01/01/2019",
             "general": 0.12
         },
@@ -336,8 +361,8 @@
             "date": "01/01/2018",
             "general": 0.07
         },
-        "Sri": {
-            "country": "Sri",
+        "Sri Lanka": {
+            "country": "Sri Lanka",
             "date": "01/01/2020",
             "general": 0.08
         },
@@ -356,6 +381,11 @@
             "date": "01/07/2012",
             "general": 0.21
         },
+        "Libia": {
+            "country": "Libia",
+            "date": "01/01/2013",
+            "general": 0
+        },
         "Marruecos": {
             "country": "Marruecos",
             "date": "01/01/2013",
@@ -371,8 +401,8 @@
             "date": "01/01/2019",
             "general": 0.21
         },
-        "Macedonia": {
-            "country": "Macedonia",
+        "Macedonia del Norte": {
+            "country": "Macedonia del Norte",
             "date": "01/01/2006",
             "general": 0.18
         },
@@ -426,8 +456,8 @@
             "date": "01/01/2013",
             "general": 0.15
         },
-        "Países": {
-            "country": "Países",
+        "Países Bajos": {
+            "country": "Países Bajos",
             "date": "01/10/2012",
             "general": 0.21
         },
@@ -436,10 +466,15 @@
             "date": "01/01/2006",
             "general": 0.25
         },
-        "Nueva": {
-            "country": "Nueva",
+        "Nueva Zelanda": {
+            "country": "Nueva Zelanda",
             "date": "01/01/2011",
             "general": 0.15
+        },
+        "Omán": {
+            "country": "Omán",
+            "date": "01/01/2013",
+            "general": 0
         },
         "Panamá": {
             "country": "Panamá",
@@ -451,8 +486,8 @@
             "date": "01/01/2011",
             "general": 0.18
         },
-        "Papúa": {
-            "country": "Papúa",
+        "Papúa Nueva Guinea": {
+            "country": "Papúa Nueva Guinea",
             "date": "01/01/2006",
             "general": 0.1
         },
@@ -476,6 +511,11 @@
             "date": "01/01/2006",
             "general": 0.1
         },
+        "Catar": {
+            "country": "Catar",
+            "date": "01/01/2013",
+            "general": 0
+        },
         "Rumanía": {
             "country": "Rumanía",
             "date": "01/01/2016",
@@ -491,15 +531,15 @@
             "date": "01/01/2019",
             "general": 0.2
         },
-        "Arabia": {
-            "country": "Arabia",
+        "Arabia Saudita": {
+            "country": "Arabia Saudita",
             "date": "01/07/2020",
             "general": 0.15
         },
         "Sudán": {
             "country": "Sudán",
-            "date": "01/01/2017",
-            "general": 0.15
+            "date": "01/01/2013",
+            "general": 0.17
         },
         "Suecia": {
             "country": "Suecia",
@@ -521,8 +561,8 @@
             "date": "01/01/2011",
             "general": 0.2
         },
-        "Sierra": {
-            "country": "Sierra",
+        "Sierra Leona": {
+            "country": "Sierra Leona",
             "date": "01/01/2014",
             "general": 0.15
         },
@@ -531,10 +571,20 @@
             "date": "01/01/2018",
             "general": 0.18
         },
-        "El": {
-            "country": "El",
+        "Sudán del Sur": {
+            "country": "Sudán del Sur",
+            "date": "01/01/2017",
+            "general": 0.15
+        },
+        "El Salvador": {
+            "country": "El Salvador",
             "date": "01/01/2012",
             "general": 0.13
+        },
+        "Siria": {
+            "country": "Siria",
+            "date": "01/01/2013",
+            "general": 0
         },
         "Eswatini": {
             "country": "Eswatini",
@@ -556,8 +606,8 @@
             "date": "01/01/2006",
             "general": 0.18
         },
-        "Trinidad": {
-            "country": "Trinidad",
+        "Trinidad y Tobago": {
+            "country": "Trinidad y Tobago",
             "date": "01/01/2016",
             "general": 0.12
         },
@@ -586,13 +636,18 @@
             "date": "01/01/2008",
             "general": 0.22
         },
+        "San Vicente y las Granadinas": {
+            "country": "San Vicente y las Granadinas",
+            "date": "01/01/2019",
+            "general": 0.16
+        },
         "Venezuela": {
             "country": "Venezuela",
             "date": "01/01/2020",
             "general": 0.16
         },
-        "Viet": {
-            "country": "Viet",
+        "Viet Nam": {
+            "country": "Viet Nam",
             "date": "01/01/2006",
             "general": 0.1
         },

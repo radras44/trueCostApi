@@ -8,7 +8,7 @@ dataManager.loadIvaData()
 const resolvers = {
     Query: {
         relativeCost : (_,args) => {
-            console.log("args:",args)
+            console.log("relativeCost:",args)
             const {from,to,amount} = args.data
             const fromMinimum = dataManager.getMinimumWage(from)
             const toMinumum = dataManager.getMinimumWage(to)
@@ -28,8 +28,8 @@ const resolvers = {
             }
         },
         convertCurrency (_,args) {
+            console.log("convertCurrency:",args)
             const convertion = dataManager.convert(args.data.amount,args.data.from,args.data.to)
-            console.log(convertion)
             if(!convertion.error){
                 return {
                     status : true,
@@ -43,8 +43,8 @@ const resolvers = {
             }
         },
         countryInfo : (_,args) => {
+            console.log("countryInfo:",args)
             const currency = dataManager.searchCountry(args.data.country) || null
-            console.log(currency)
             if(currency == null){return {status : false,error : `${args.data.country} not found or not supported`}}
             const minimumWage = dataManager.getMinimumWage(currency) || null
             const ivaGeneral = dataManager.getIva(currency) || null
@@ -57,7 +57,7 @@ const resolvers = {
                 minimumWage : minimumWage,
                 ivaGeneral : ivaGeneral 
             }
-            console.log(response)
+   
             return response
         }
     }

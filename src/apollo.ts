@@ -6,6 +6,8 @@ import schema from "./graphql/schema";
 const server = new ApolloServer({
     typeDefs: schema,
     resolvers: resolvers,
+ 
+  
 })
 
 export default server

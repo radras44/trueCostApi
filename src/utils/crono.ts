@@ -21,7 +21,7 @@ export function createScheduledTask({ comprobationTime, minTimeBetweenUpdate, la
             let hours = Math.floor(timeLeft / (1000 * 60 * 60))
             let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
             let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
-            console.log(`quedan ${hours} con ${minutes} y ${seconds} hasta la siguiente actualizacion`)
+            console.log(`quedan ${hours} horas con ${minutes} minutos y ${seconds} segundos hasta la siguiente actualizacion`)
         }
 
     }, comprobationTime)

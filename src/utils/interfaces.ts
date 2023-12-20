@@ -3,6 +3,7 @@ export interface ErFetchResObj {
     results: { [key: string]: number }
 }
 
+
 export interface ErData {
     updateDate: Date
     data: ErFetchResObj
